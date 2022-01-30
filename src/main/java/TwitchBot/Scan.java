@@ -10,7 +10,7 @@ public class Scan {
             if(NavigateContext.toLowerCase().contains(ToFind)){
                 CharactersWithinContext = NavigateContext.toLowerCase().toCharArray();
                 for(char FindCharacters: CharactersWithinContext){
-                    if(FindCharacters != 's' && FindCharacters != 'i')
+                    if(FindCharacters != 's' || FindCharacters != 'i')
                         return false;
                 }}}
     return true;
