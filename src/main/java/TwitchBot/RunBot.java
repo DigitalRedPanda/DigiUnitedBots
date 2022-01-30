@@ -21,12 +21,12 @@ public class RunBot implements BotInitiation {
             SpammableWords.add("Followers, primes and viewers on");
             SpammableWords.add("SIMP");
             Pattern TraceSpammableWord = Pattern.compile(SpammableWords.get(0),Pattern.CASE_INSENSITIVE);
-            Pattern TraceBannableWord = Pattern.compile/*("/\\SI[^abcdefghjklmnopqrtuvwxyz]"*/("[^abcdefghjklmnopqrtuvwxyzABCDEFGHJKLMNOPQRTUVWXYZ]\\SI[^abcdefghjklmnopqrtuvwxyzABCDEFGHJKLMNOPQRTUVWXYZ]", Pattern.CASE_INSENSITIVE);
+            //Pattern TraceBannableWord = Pattern.compile/*("/\\SI[^abcdefghjklmnopqrtuvwxyz]"*/("[^abcdefghjklmnopqrtuvwxyzABCDEFGHJKLMNOPQRTUVWXYZ]\\SI[^abcdefghjklmnopqrtuvwxyzABCDEFGHJKLMNOPQRTUVWXYZ]", Pattern.CASE_INSENSITIVE);
             String Sender = event.getUser().getName();
             String Message = event.getMessage();
-            Matcher CatchBannableWord = TraceBannableWord.matcher(Message);
+            //Matcher CatchBannableWord = TraceBannableWord.matcher(Message);
             Matcher CatchSpammableWord = TraceSpammableWord.matcher(Message);
-            boolean BannableWordExists = CatchBannableWord.find();
+            //boolean BannableWordExists = CatchBannableWord.find();
             if(Scan.FindSI(Message)/*&& CurrentChannel.equalsIgnoreCase("reoina") && !*/)
                 TC.getChat().sendMessage(CurrentChannel,"/ban "+Sender+ " Said SI");
             if(CatchSpammableWord.find())
