@@ -13,6 +13,6 @@ public class Scan {
                     if(FindFirstHalf && FindSecondHalf)
                         return false;
                 }}}
-        return true;
+    return true;
     }
 }
