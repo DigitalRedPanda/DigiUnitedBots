@@ -27,7 +27,7 @@ public class RunBot implements BotInitiation {
             Matcher CatchBannableWord = TraceBannableWord.matcher(Message);
             Matcher CatchSpammableWord = TraceSpammableWord.matcher(Message);
             boolean BannableWordExists = CatchBannableWord.find();
-            if( Scan.Find("SI",Message)/*&& CurrentChannel.equalsIgnoreCase("reoina") && !*/)
+            if(Scan.FindSI(Message)/*&& CurrentChannel.equalsIgnoreCase("reoina") && !*/)
                 TC.getChat().sendMessage(CurrentChannel,"/ban "+Sender+ " Said SI");
             if(CatchSpammableWord.find())
             TC.getChat().sendMessage(CurrentChannel,"/ban "+ Sender+" Spamming bot");
