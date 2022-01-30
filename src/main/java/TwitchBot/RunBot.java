@@ -40,7 +40,7 @@ public class RunBot implements BotInitiation {
             System.out.printf("\n%s used %s command in %s", Sender, Command[0], CommandSource);
             if (Command[0].equalsIgnoreCase("vanish"))
                 commandEvent.respondToUser("/timeout " + Sender + " 1 Vanished");
-            /*if(Command[0].equalsIgnoreCase("CreatPrediction")) {//
+            /*if(Command[0].equalsIgnoreCase("CreatPrediction")) {
 
             }*/
             if (Command[0].equalsIgnoreCase("Add"))

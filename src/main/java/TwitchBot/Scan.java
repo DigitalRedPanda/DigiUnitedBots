@@ -13,9 +13,9 @@ public class Scan {
 if(FindUnrelatedCharacter !='s' && FindUnrelatedCharacter !='i')
     return false;
                 }
-                return true;
+    return true;
             }}
 
-        return false;
+    return false;
     }
 }
