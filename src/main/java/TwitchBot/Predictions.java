@@ -5,16 +5,16 @@ import java.util.Collection;
 
 
 public class Predictions {
-     String Channel;
-     String Title;
-     int Duration;
+     String Channel=null;
+     String Title=null;
+     int Duration=0;
      Collection<?extends PredictionOutcome> WantedOutComes;
-public Predictions(String PredictionChannel,String PredictionTitle,int PredictionDuration,Collection<?extends PredictionOutcome> PredictionOutComes){
-PredictionChannel = Channel;
-PredictionTitle=Title;
-PredictionDuration=Duration;
-PredictionOutComes = WantedOutComes;
-CreatePrediction(Channel,Title,Duration,WantedOutComes);
+public Predictions(){
+    String PredictionChannel = Channel;
+    String PredictionTitle = Title;
+    int PredictionDuration = Duration;
+    Collection<? extends PredictionOutcome> PredictionOutComes = WantedOutComes;
+CreatePrediction(PredictionChannel,PredictionTitle,PredictionDuration,PredictionOutComes);
 }
 
 

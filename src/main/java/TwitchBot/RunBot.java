@@ -12,8 +12,6 @@ import java.util.regex.Pattern;
 public class RunBot implements BotInitiation {
     public static void main(String[] args) throws ArrayIndexOutOfBoundsException{
 
-        //BotInitiation.InitializeBot();
-        //CM.registerIdentityProvider(new TwitchIdentityProvider(ClientID,ClientSecret,RedirectURL));
         TC.getChat().sendMessage(DefaultChannel,String.format("Hello %s, %s has added your channel",DefaultChannel.toLowerCase(),OwnerNickname));
         TC.getEventManager().onEvent(ChannelMessageEvent.class, event -> {
             String CurrentChannel = event.getChannel().getName();
@@ -27,7 +25,7 @@ public class RunBot implements BotInitiation {
             //Matcher CatchBannableWord = TraceBannableWord.matcher(Message);
             Matcher CatchSpammableWord = TraceSpammableWord.matcher(Message);
             //boolean BannableWordExists = CatchBannableWord.find();
-            if(Scan.FindSI(Message)/*&& CurrentChannel.equalsIgnoreCase("reoina") && !*/)
+            if(Scan.FindSI(Message) && CurrentChannel.equalsIgnoreCase("reoina"))
                 TC.getChat().sendMessage(CurrentChannel,"/ban "+Sender+ " Said SI");
             if(CatchSpammableWord.find())
             TC.getChat().sendMessage(CurrentChannel,"/ban "+ Sender+" Spamming bot");
@@ -40,9 +38,6 @@ public class RunBot implements BotInitiation {
             System.out.printf("\n%s used %s command in %s", Sender, Command[0], CommandSource);
             if (Command[0].equalsIgnoreCase("vanish"))
                 commandEvent.respondToUser("/timeout " + Sender + " 1 Vanished");
-            /*if(Command[0].equalsIgnoreCase("CreatPrediction")) {
-
-            }*/
             if (Command[0].equalsIgnoreCase("Add"))
                 try {
             BotInitiation.JoinChannel(Command[1]);}
@@ -63,10 +58,10 @@ public class RunBot implements BotInitiation {
         System.out.printf("\n[%s] prediction:%s Started at:%s ", prediction.getBroadcasterUserName(),prediction.getTitle(),prediction.getStartedAt());
             TC.getChat().sendMessage(prediction.getBroadcasterUserName(), String.format("We have started %s prediction on %s, bet wisely chat DinkDonk", prediction.getTitle(), prediction.getStartedAt()));
     });
-        TC.getEventManager().onEvent(ChannelUnbanEvent.class, UnBanned ->{
-        System.out.printf("\n[%s] %s unbanned %s",UnBanned.getBroadcasterUserName(),UnBanned.getModeratorUserName(),UnBanned.getUserName());
+        TC.getEventManager().onEvent(ChannelUnbanEvent.class, UnBanned -> {
+            System.out.printf("\n[%s] %s unbanned %s", UnBanned.getBroadcasterUserName(), UnBanned.getModeratorUserName(), UnBanned.getUserName());
 
-    });
+        });
 
     }
 
