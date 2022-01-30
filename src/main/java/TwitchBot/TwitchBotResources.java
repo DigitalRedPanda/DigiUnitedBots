@@ -6,7 +6,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 public interface TwitchBotResources {
     Dotenv dotenv = Dotenv.configure()
             .directory(".\\assets")
-            .filename("Info.env")
+            .filename(".env")
             .load();
     String ClientSecret = dotenv.get("CLIENT_SECRET");
     String Token = dotenv.get("TOKEN");
