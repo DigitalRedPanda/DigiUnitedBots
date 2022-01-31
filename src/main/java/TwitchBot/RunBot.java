@@ -29,20 +29,20 @@ public class RunBot implements BotInitiation {
                 TC.getChat().sendMessage(CurrentChannel,"/ban "+Sender+ " Said SI");
             if(CatchSpammableWord.find())
             TC.getChat().sendMessage(CurrentChannel,"/ban "+ Sender+" Spamming bot");
-            System.out.printf("\n[%s] %s: %s", CurrentChannel,Sender,Message);
+            System.out.printf("[%s] %s: %s\n", CurrentChannel,Sender,Message);
         });
         TC.getEventManager().onEvent(CommandEvent.class, commandEvent -> {
             String Sender = commandEvent.getUser().getName();
             String[] Command = commandEvent.getCommand().split(" ");
             String CommandSource = commandEvent.getSource().name();
-            System.out.printf("\n%s used %s command in %s", Sender, Command[0], CommandSource);
+            System.out.printf("%s used %s command in %s\n", Sender, Command[0], CommandSource);
             if (Command[0].equalsIgnoreCase("vanish"))
                 commandEvent.respondToUser("/timeout " + Sender + " 1 Vanished");
             if (Command[0].equalsIgnoreCase("Add"))
                 try {
             BotInitiation.JoinChannel(Command[1]);}
             catch(ArrayIndexOutOfBoundsException A){
-                System.err.print("\nCannot add an empty channel");
+                System.err.print("Cannot add an empty channel\n");
                 TC.getChat().sendMessage(DefaultChannel,"Cannot join an empty channel");
 }            if (Command[0].equalsIgnoreCase("Leave")) {
                 try{

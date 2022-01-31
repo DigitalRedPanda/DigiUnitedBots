@@ -20,6 +20,7 @@ public class Resources {
         while (Result != null){
             System.out.format("Hypothesis: %s \n",Result.getHypothesis());
         }
+        SpeechRecognizer.stopRecognition();
 
     }
 }
