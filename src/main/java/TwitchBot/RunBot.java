@@ -3,8 +3,6 @@ package TwitchBot;
 
 import com.github.twitch4j.chat.events.CommandEvent;
 import com.github.twitch4j.chat.events.channel.ChannelMessageEvent;
-import com.github.twitch4j.eventsub.events.ChannelPredictionBeginEvent;
-import com.github.twitch4j.eventsub.events.ChannelUnbanEvent;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
