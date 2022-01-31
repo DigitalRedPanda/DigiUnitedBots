@@ -18,6 +18,8 @@ public class Resources{
             while((speechResult = SpeechRecognizer.getResult()) != null){
                 String VoiceCommand = speechResult.getHypothesis();
                 System.out.printf("Voice command: %s",VoiceCommand);
+                if(VoiceCommand.equalsIgnoreCase("Change Game"))
+                    ;
 
             }
         }catch(IOException e){

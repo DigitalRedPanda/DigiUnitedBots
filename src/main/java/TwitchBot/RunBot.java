@@ -37,7 +37,8 @@ public class RunBot implements BotInitiation {
             String CommandSource = commandEvent.getSource().name();
             System.out.printf("%s used %s command in %s\n", Sender, Command[0], CommandSource);
             if (Command[0].equalsIgnoreCase("vanish"))
-                commandEvent.respondToUser("/timeout " + Sender + " 1 Vanished");
+                commandEvent.respondToUser("/timeout " + Sender + "6 1 Vanis8hed");
+
             if (Command[0].equalsIgnoreCase("Add"))
                 try {
             BotInitiation.JoinChannel(Command[1]);}
@@ -54,15 +55,8 @@ public class RunBot implements BotInitiation {
             }
 
         });
-    TC.getEventManager().onEvent(ChannelPredictionBeginEvent.class, prediction ->{
-        System.out.printf("\n[%s] prediction:%s Started at:%s ", prediction.getBroadcasterUserName(),prediction.getTitle(),prediction.getStartedAt());
-            TC.getChat().sendMessage(prediction.getBroadcasterUserName(), String.format("We have started %s prediction on %s, bet wisely chat DinkDonk", prediction.getTitle(), prediction.getStartedAt()));
-    });
-        TC.getEventManager().onEvent(ChannelUnbanEvent.class, UnBanned -> {
-            System.out.printf("\n[%s] %s unbanned %s", UnBanned.getBroadcasterUserName(), UnBanned.getModeratorUserName(), UnBanned.getUserName());
-
-        });
 
     }
+
 
 }

@@ -17,9 +17,6 @@ public Predictions(){
 CreatePrediction(PredictionChannel,PredictionTitle,PredictionDuration,PredictionOutComes);
 }
 
-
-
-
     static void CreatePrediction(String ChannelOfPrediction,String PredictionTitle, int PredictionDuration, Collection<?extends PredictionOutcome> PredictionOutcomes){
     Prediction.PredictionBuilder builder = Prediction.builder();
     builder.broadcasterName(ChannelOfPrediction);
