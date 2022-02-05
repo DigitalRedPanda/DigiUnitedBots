@@ -11,6 +11,9 @@ public class Resources{
         Configure.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
         Configure.setDictionaryPath("src\\main\\resources\\Voicecommands.dic" );
         Configure.setLanguageModelPath("src\\main\\resources\\Voicecommands.lm");
+        /*Configure.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
+        Configure.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.bin");
+*/
         try {
             LiveSpeechRecognizer SpeechRecognizer = new LiveSpeechRecognizer(Configure);
             SpeechRecognizer.startRecognition(true);
